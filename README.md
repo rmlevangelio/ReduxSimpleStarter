@@ -30,6 +30,9 @@ Comes from `react-router` package:
 
 `<Router history={browserHistory} routes={routes}/>`
 
+
+IndexRoute is for the initial component
+
 ```js
 export default (
   <Route path="/" component={App} >
@@ -38,9 +41,20 @@ export default (
     <Route path="posts/:id" component={PostsShow} />
   </Route>
 );
-
-IndexRoute is for the initial component
 ```
+
+To access the parameter of the url, we can use:
+
+Where `id` is the parameter
+
+```js
+http://localhost:8080/posts/5
+
+this.props.params.id
+```
+
+
+
 
 #### Checks if the component is already mounted before performing actions
 ```js
