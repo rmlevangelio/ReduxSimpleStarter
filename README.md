@@ -43,9 +43,11 @@ IndexRoute is for the initial component
 ```
 
 #### Checks if the component is already mounted before performing actions
-```componentWillMount() {
+```js
+componentWillMount() {
     
-}```
+}
+```
 
 #### Redirecting to a certain route
 
@@ -68,6 +70,26 @@ export default (state = INITIAL_STATE, action) => {
     default:
       return state;
   }
+}
+```
+
+#### Sample Action Creator
+
+```js
+const FETCH_POST = 'FETCH_POST';
+
+const fetchPost = (id) => {
+  const request = axios.get(`${ROOT_URL}/posts/${id}${API_KEY}`);
+
+  return {
+    type: FETCH_POST,
+    payload: request
+  }
+}
+
+export {
+  FETCH_POST,
+  fetchPost
 }
 ```
 
