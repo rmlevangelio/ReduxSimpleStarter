@@ -30,8 +30,9 @@ Comes from `react-router` package:
 
 `<Router history={browserHistory} routes={routes}/>`
 
-```export default (
-  <Route path="/" component={App} > // Renders app
+```js
+export default (
+  <Route path="/" component={App} >
     <IndexRoute component={PostsIndex} />
     <Route path="posts/new" component={PostsNew} />
     <Route path="posts/:id" component={PostsShow} />
